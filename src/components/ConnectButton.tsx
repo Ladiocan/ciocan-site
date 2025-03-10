@@ -18,23 +18,23 @@ const ConnectButton = () => {
   if (!mounted) return null; // Evită erorile de hydration la refresh
 
   return (
-    <div>
+    <div className="flex items-center space-x-3">
       {isConnected ? (
-        <div>
-          <p>Connected: {address}</p>
+        <>
+          <span className="text-sm text-gray-400">
+            {address?.slice(0, 6)}...{address?.slice(-4)}
+          </span>
           <button
             onClick={() => disconnect()}
-            className="px-4 py-2 bg-red-500 text-white rounded"
+            className="text-xs px-3 py-1 bg-red-600 rounded-md hover:bg-red-700 transition-all duration-300"
           >
             Disconnect
           </button>
-        </div>
+        </>
       ) : (
         <button
-          onClick={() => {
-            connect({ connector: injected() });
-          }}
-          className="px-4 py-2 bg-blue-500 text-white rounded"
+          onClick={() => connect({ connector: injected() })}
+          className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-all duration-300"
         >
           Connect Wallet
         </button>
