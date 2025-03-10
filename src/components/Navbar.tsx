@@ -7,7 +7,7 @@ const Navbar = () => {
       <Link href="/">
         <h1 className="text-xl font-bold cursor-pointer">Ciocan Web3</h1>
       </Link>
-      <ConnectButton />
+      <ConnectButton /> {/* 🔹 Corectat, fără "Connect" în interior */}
     </nav>
   );
 };

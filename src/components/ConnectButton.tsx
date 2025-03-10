@@ -1,7 +1,7 @@
 "use client";
 
 import { useAccount, useConnect, useDisconnect } from "wagmi";
-import { InjectedConnector } from "@wagmi/core/connectors/injected";
+import { injected } from "wagmi/connectors";
 import { useState } from "react";
 
 const ConnectButton = () => {
@@ -26,8 +26,9 @@ const ConnectButton = () => {
         <button
           onClick={() => {
             setLoading(true);
-            connect({ connector: new InjectedConnector() });
+            connect({ connector: injected() });
           }}
+          className="px-4 py-2 bg-blue-500 text-white rounded"
         >
           {loading ? "Connecting..." : "Connect Wallet"}
         </button>
