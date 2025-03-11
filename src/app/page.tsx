@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import BlockchainBackground from "@/components/BlockchainBackground";
+import SocialLinks from "@/components/SocialLinks"; // Import corect
+import "../styles/globals.css";
 
 export default function HomePage() {
   const [isClient, setIsClient] = useState(false);
@@ -27,9 +29,9 @@ export default function HomePage() {
       <BlockchainBackground />
 
       {/* Hero Section */}
-      <section className="flex flex-col items-center justify-center text-center mt-10">
+      <section className="flex flex-col items-center justify-center text-center mt-5">
         <h2 className="text-4xl font-bold text-white drop-shadow-lg animate-pulse">
-          👋 Bine ai venit la <span className="text-blue-400">Ladislau Ciocan</span>
+         Bine ai venit la <span className="text-blue-400">Ladislau Ciocan</span>
         </h2>
         <p className="mt-2 text-lg text-gray-300 max-w-lg">
           Un CV Web3 interactiv care îmbină pasiunea pentru turism, blockchain, 3D printing și tehnologie.
@@ -45,7 +47,7 @@ export default function HomePage() {
               className={`futuristic-button ${explode === "cv" ? "explode" : ""}`}
               onClick={() => handleExplode("cv", "/cv")}
             >
-              my C.V.
+              My C.V.
             </button>
             <button
               className={`futuristic-button ${explode === "hobbies" ? "explode" : ""}`}
@@ -87,79 +89,8 @@ export default function HomePage() {
         </p>
       </section>
 
-      {/* CSS */}
-      <style jsx>{`
-        .futuristic-button {
-          position: relative;
-          background: rgba(0, 255, 255, 0.2);
-          border: 2px solid rgba(0, 255, 255, 0.6);
-          color: white;
-          padding: 12px 24px;
-          font-size: 1rem;
-          font-weight: bold;
-          border-radius: 10px;
-          cursor: pointer;
-          transition: transform 0.2s ease-in-out, box-shadow 0.3s, background 0.3s;
-          box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
-          text-transform: uppercase;
-          width: 220px;
-          text-align: center;
-        }
-
-        .futuristic-button:hover {
-          transform: scale(1.2);
-          background: rgba(0, 255, 255, 0.5);
-          box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
-        }
-
-        .explode {
-          animation: explodeEffect 0.5s forwards;
-        }
-
-        @keyframes explodeEffect {
-          0% {
-            transform: scale(1);
-            opacity: 1;
-          }
-          50% {
-            transform: scale(1.5);
-            opacity: 0.5;
-          }
-          100% {
-            transform: scale(2);
-            opacity: 0;
-          }
-        }
-
-        .animate-fade-in {
-          animation: fadeIn 1s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(-20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .glow-effect {
-          box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
-          animation: glow 2s infinite alternate;
-        }
-
-        @keyframes glow {
-          from {
-            box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
-          }
-          to {
-            box-shadow: 0 0 25px rgba(0, 255, 255, 1);
-          }
-        }
-      `}</style>
+      {/* Butoane Social Media */}
+      <SocialLinks />
     </div>
   );
 }
