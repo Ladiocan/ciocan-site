@@ -52,7 +52,7 @@ const BlockchainBackground = () => {
   }, []);
 
   return (
-    <div className="absolute inset-0 overflow-hidden z-0">
+    <div className="absolute inset-0 overflow-hidden z-0 w-full max-w-screen pointer-events-none hidden sm:block">
       {cubes.map((cube) => (
         <div
           key={cube.id}
@@ -60,6 +60,7 @@ const BlockchainBackground = () => {
           style={{
             top: `${cube.top}%`,
             left: `${cube.left}%`,
+            transform: "translateX(-50%)",
             width: `${cube.size}px`,
             height: `${cube.size}px`,
             animationDelay: `${cube.delay}s`,

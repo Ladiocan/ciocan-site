@@ -10,23 +10,22 @@ const ConnectButton = () => {
   const { disconnect } = useDisconnect();
   const [mounted, setMounted] = useState(false);
 
-  // Evită problemele de hydration: componenta se randează doar pe client
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  if (!mounted) return null; // Evită erorile de hydration la refresh
+  if (!mounted) return null;
 
   return (
     <div className="flex items-center space-x-3">
       {isConnected ? (
         <>
-          <span className="text-sm text-gray-400">
+          <span className="text-sm text-cyan-300 font-mono">
             {address?.slice(0, 6)}...{address?.slice(-4)}
           </span>
           <button
             onClick={() => disconnect()}
-            className="text-xs px-3 py-1 bg-red-600 rounded-md hover:bg-red-700 transition-all duration-300"
+            className="text-xs px-3 py-1 rounded-md bg-red-600 hover:bg-red-700 transition-all duration-300 shadow-md"
           >
             Disconnect
           </button>
@@ -34,7 +33,7 @@ const ConnectButton = () => {
       ) : (
         <button
           onClick={() => connect({ connector: injected() })}
-          className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-all duration-300"
+          className="futuristic-button px-3 py-1 text-xs whitespace-nowrap"
         >
           Connect Wallet
         </button>

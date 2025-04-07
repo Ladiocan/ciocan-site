@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import BlockchainBackground from "@/components/BlockchainBackground";
-import SocialLinks from "@/components/SocialLinks"; // Import corect
+import SocialLinks from "@/components/SocialLinks";
 import "../styles/globals.css";
 
 export default function HomePage() {
@@ -23,27 +23,27 @@ export default function HomePage() {
   };
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-b from-black to-gray-900 text-white flex flex-col items-center justify-start animate-fade-in pt-10">
+    <div className="relative min-h-screen bg-gradient-to-b from-black to-gray-900 text-white flex flex-col items-center justify-start animate-fade-in pt-2 sm:pt-10">
       
-      {/* Fundalul cu cuburi animate */}
+      {/* Fundal animat */}
       <BlockchainBackground />
 
-      {/* Hero Section */}
-      <section className="flex flex-col items-center justify-center text-center mt-5">
-        <h2 className="text-4xl font-bold text-white drop-shadow-lg animate-pulse">
-         Bine ai venit la <span className="text-blue-400">Ladislau Ciocan</span>
+      {/* Hero */}
+      <section className="flex flex-col items-center justify-center text-center mt-5 px-4 mb-2 sm:mb-4">
+        <h2 className="text-3xl sm:text-4xl font-bold text-white drop-shadow-lg animate-pulse">
+          Welcome to <span className="text-blue-400">Ladislau Ciocan</span>
         </h2>
-        <p className="mt-2 text-lg text-gray-300 max-w-lg">
-          Un CV Web3 interactiv care îmbină pasiunea pentru turism, blockchain, 3D printing și tehnologie.
-        </p>
+        <p className="mt-2 text-base sm:text-lg text-gray-300 max-w-lg">
+        An interactive Web3 CV that combines a passion for tourism, blockchain, 3D printing, and technology        </p>
       </section>
 
-      {/* About Me */}
+      {/* About Me + Butoane */}
       <section className="mt-6 flex flex-col items-center text-center px-6 max-w-3xl relative">
-        <div className="relative flex items-center justify-center">
-          {/* Butoane Stânga */}
-          <div className="absolute left-[-250px] flex flex-col space-y-6">
-            <button
+      <div className="w-full flex flex-col items-center justify-center md:relative md:flex-row md:gap-6">
+          
+          {/* Butoane Stânga (pe mobil deasupra) */}
+          <div className="flex flex-col space-y-4 md:absolute md:left-[-250px] md:top-1/2 md:-translate-y-1/2">
+          <button
               className={`futuristic-button ${explode === "cv" ? "explode" : ""}`}
               onClick={() => handleExplode("cv", "/cv")}
             >
@@ -58,17 +58,19 @@ export default function HomePage() {
           </div>
 
           {/* Imagine Profil */}
-          <Image
-            src="/me.jpg"
-            width={160}
-            height={160}
-            alt="Ladislau Ciocan"
-            className="rounded-full shadow-lg border-4 border-blue-400 glow-effect"
-          />
+          <div className="flex justify-center">
+            <Image
+              src="/me.jpg"
+              width={160}
+              height={160}
+              alt="Ladislau Ciocan"
+              className="mt-4 sm:mt-6 rounded-full shadow-lg border-4 border-blue-400 glow-effect"
+            />
+          </div>
 
-          {/* Butoane Dreapta */}
-          <div className="absolute right-[-250px] flex flex-col space-y-6">
-            <button
+          {/* Butoane Dreapta (pe mobil sub poză) */}
+          <div className="flex flex-col space-y-4 mt-4 md:mt-0 md:absolute md:right-[-250px] md:top-1/2 md:-translate-y-1/2">
+          <button
               className={`futuristic-button ${explode === "projects" ? "explode" : ""}`}
               onClick={() => handleExplode("projects", "/projects")}
             >
@@ -83,13 +85,13 @@ export default function HomePage() {
           </div>
         </div>
 
-        <h3 className="text-2xl font-semibold mt-4">Salut! Sunt Ladislau Ciocan</h3>
+        <h3 className="text-2xl font-semibold mt-6">Hi! I'm Ladislau</h3>
         <p className="mt-1 text-gray-400">
-          Pasionat de turism, 3D printing, blockchain și Web3.
+        Passionate about tourism, 3D printing, blockchain, and Web3.
         </p>
       </section>
 
-      {/* Butoane Social Media */}
+      {/* Social Media */}
       <SocialLinks />
     </div>
   );
