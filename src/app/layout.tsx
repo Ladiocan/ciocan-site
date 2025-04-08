@@ -25,6 +25,11 @@ const wagmiConfig = createConfig({
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+        <title>Ciocan Ladislau</title>
+        <meta name="description" content="CV Ciocan Ladislau" />
+      </head>
       <body>
         <QueryClientProvider client={queryClient}>
           <WagmiProvider config={wagmiConfig}>
@@ -36,3 +41,4 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     </html>
   );
 }
+
