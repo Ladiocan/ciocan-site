@@ -10,13 +10,13 @@ const projects = [
     title: "First Site",
     description: "My first experiments with HTML, CSS, and JavaScript — where the journey began.",
     icon: <Globe size={48} className="text-cyan-400 mb-4" />,
-    link: "/first-site",
+    link: "https://first-site.ciocan.eu",
   },
   {
     title: "Fusion Travel",
     description: "A pixel-perfect travel UI built by replicating a design from a reference image.",
     icon: <Plane size={48} className="text-cyan-400 mb-4" />,
-    link: "/fusion-travel",
+    link: "https://fusion-travel.ciocan.eu",
   },
   {
     title: "Booking Form",
