@@ -7,10 +7,16 @@ import { Globe, Plane, Activity } from "lucide-react";
 
 const projects = [
   {
-    title: "First Site",
-    description: "My first experiments with HTML, CSS, and JavaScript — where the journey began.",
-    icon: <Globe size={48} className="text-cyan-400 mb-4" />,
-    link: "https://first-site.ciocan.eu",
+    title: "Booking NFT Voucher",
+    description: "A Web3 booking platform for generating personalized NFT vouchers for travel services.",
+    image:"/nftvoucher.png",
+    link: "https://nft-voucher.ciocan.eu",
+  },
+  {
+    title: "Crypto App",
+    description: "AI price prediction for top crypto coins using Binance + Random Forest.",
+    icon: <Activity size={48} className="text-cyan-400 mb-4" />,
+    link: "/crypto-app",
   },
   {
     title: "Fusion Travel",
@@ -19,16 +25,10 @@ const projects = [
     link: "https://fusion-travel.ciocan.eu",
   },
   {
-    title: "Booking Form",
-    description: "A Web3 booking platform for generating personalized NFT vouchers for travel services.",
-    image:"/nftvoucher.png",
-    link: "/booking-form",
-  },
-  {
-    title: "Crypto App",
-    description: "AI price prediction for top crypto coins using Binance + Random Forest.",
-    icon: <Activity size={48} className="text-cyan-400 mb-4" />,
-    link: "/crypto-app",
+    title: "First Site",
+    description: "My first experiments with HTML, CSS, and JavaScript — where the journey began.",
+    icon: <Globe size={48} className="text-cyan-400 mb-4" />,
+    link: "https://first-site.ciocan.eu",
   },
 ];
 
