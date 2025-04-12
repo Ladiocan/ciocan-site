@@ -96,12 +96,20 @@ export default function ProjectsPage() {
               )}
               <h2 className="text-xl font-semibold text-cyan-300 mb-2">{proj.title}</h2>
               <p className="text-sm text-gray-300 mb-4">{proj.description}</p>
-              <Link
-                href={proj.link}
-                className="futuristic-button text-sm px-4 py-2 mt-auto"
-              >
-                Go to Project
-              </Link>
+              {proj.link.startsWith("http") ? (
+                <a
+                  href={proj.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="futuristic-button text-sm px-4 py-2 mt-auto"
+                >
+                  Go to Project
+                </a>
+              ) : (
+                <Link href={proj.link} className="futuristic-button text-sm px-4 py-2 mt-auto">
+                  Go to Project
+                </Link>
+              )}
             </motion.div>
           ))}
         </div>
