@@ -16,7 +16,7 @@ const projects = [
     title: "Crypto App",
     description: "AI price prediction for top crypto coins using Binance + Random Forest.",
     icon: <Activity size={48} className="text-cyan-400 mb-4" />,
-    link: "/crypto-app",
+    link: "https://crypto-app.ciocan.eu",
   },
   {
     title: "Fusion Travel",
